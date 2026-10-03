@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HerbaDex | Indian Medicinal Plants & Herbal Repository</title>
+
+    <meta name="description"
+          content="HerbaDex is an educational repository of Indian medicinal plants, pharmacognosy and phytochemistry information.">
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f6faf7;
+            color: #1f3327;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            width: 100%;
+            background: #ffffff;
+            border-bottom: 1px solid #e1ebe4;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 700;
+            color: #216e45;
+        }
+
+        .logo span {
+            color: #78a96b;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #30483a;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: #216e45;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            padding: 70px 7%;
+            background:
+                linear-gradient(
+                    135deg,
+                    #edf7ef,
+                    #ffffff
+                );
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 8px 14px;
+            background: #e0f0e5;
+            color: #216e45;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #173c29;
+        }
+
+        .hero h1 span {
+            color: #318052;
+        }
+
+        .hero p {
+            max-width: 680px;
+            font-size: 18px;
+            line-height: 1.7;
+            color: #53665b;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            padding: 13px 22px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background: #267447;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1c5c37;
+        }
+
+        .btn-secondary {
+            border: 1px solid #267447;
+            color: #267447;
+            background: white;
+        }
+
+        /* INTRO */
+
+        .section {
+            padding: 70px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 34px;
+            color: #173c29;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #64756b;
+        }
+
+        /* CARDS */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 14px;
+            border: 1px solid #e0eae3;
+            box-shadow: 0 8px 25px rgba(30, 70, 45, 0.06);
+        }
+
+        .card-icon {
+            font-size: 32px;
+            color: #2d8050;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            color: #244c35;
+        }
+
+        .card p {
+            line-height: 1.7;
+            color: #637268;
+        }
+
+        /* DISCLAIMER */
+
+        .disclaimer {
+            background: #fffdf5;
+            border: 1px solid #eee5c7;
+            padding: 25px;
+            border-radius: 12px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .disclaimer h3 {
+            color: #705d25;
+            margin-bottom: 10px;
+        }
+
+        .disclaimer p {
+            color: #6c654e;
+            line-height: 1.7;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #173c29;
+            color: white;
+            text-align: center;
+            padding: 30px 7%;
+            margin-top: 30px;
+        }
+
+        footer p {
+            margin: 5px 0;
+            color: #d5e3d9;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 768px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 55px 5%;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 55px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <div class="logo">
+            Herba<span>Dex</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="#">Plants</a></li>
+            <li><a href="#">Phytochemistry</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">References</a></li>
+        </ul>
+
+    </nav>
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="tag">
+                Pharmacognosy & Phytochemistry Directory
+            </div>
+
+            <h1>
+                Indian Medicinal Plants
+                <span>Herbal Repository</span>
+            </h1>
+
+            <p>
+                HerbaDex is an educational digital repository designed
+                to organize information about Indian medicinal plants,
+                their botanical identity, plant parts used, active
+                constituents and phytochemical profiles.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#" class="btn btn-primary">
+                    Explore Plants
+                </a>
+
+                <a href="#" class="btn btn-secondary">
+                    Learn About Pharmacognosy
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+
+    <section class="section">
+
+        <div class="section-title">
+
+            <h2>
+                Explore Herbal Knowledge
+            </h2>
+
+            <p>
+                Understand medicinal plants through structured
+                pharmacognosy and phytochemistry information.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="card-icon">
+                    <i class="bi bi-flower1"></i>
+                </div>
+
+                <h3>
+                    Pharmacognosy
+                </h3>
+
+                <p>
+                    Pharmacognosy is the study of medicines and
+                    useful substances obtained from natural sources,
+                    especially plants.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    <i class="bi bi-droplet-half"></i>
+                </div>
+
+                <h3>
+                    Phytochemistry
+                </h3>
+
+                <p>
+                    Phytochemistry focuses on the chemical
+                    constituents found in plants, including
+                    compounds such as alkaloids, flavonoids,
+                    terpenoids and phenolic compounds.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DISCLAIMER -->
+
+    <section class="section">
+
+        <div class="disclaimer">
+
+            <h3>
+                Educational Disclaimer
+            </h3>
+
+            <p>
+                HerbaDex is an educational and informational
+                repository. The information presented on this
+                website is not intended to provide diagnosis,
+                treatment, dosage recommendations or personalized
+                medical advice. Users should consult qualified
+                healthcare professionals for medical decisions.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h3>HerbaDex</h3>
+
+        <p>
+            Indian Medicinal Plants & Herbal Knowledge Repository
+        </p>
+
+        <p>
+            Academic Prototype | Pharmacognosy & Phytochemistry
+        </p>
+
+    </footer>
+
+</body>
+</html>
